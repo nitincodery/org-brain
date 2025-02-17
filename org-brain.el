@@ -992,7 +992,7 @@ affect the fetched targets."
           ('default (apply #'completing-read args))
           ('ido (apply #'ido-completing-read args))
           ('ivy (apply #'ivy-completing-read args))
-          ('helm (apply #'helm-completing-read-default-1
+          ('helm (apply #'helm-compLeting-read-default-1
                         (append args '("org-brain" "*org-brain-helm*")))))
         (funcall org-brain-completion-system prompt choices))))
 
@@ -1511,7 +1511,6 @@ Optionally only delete if matching MATCH-REGEX."
 ;;; Buffer commands
 
 ;;;###autoload
-
 (defun org-brain-add-child (entry children &optional verbose)
   "Add external CHILDREN (a list of entries) to ENTRY.
 If called interactively use `org-brain-entry-at-pt' and let user choose entry.
@@ -2290,7 +2289,6 @@ If run interactively, get ENTRY from context and prompt for TITLE."
   (org-brain--revert-if-visualizing))
 
 ;;;###autoload
-
 (defun org-brain-set-tags (entry)
   "Modify the ENTRY tags.
 Use `org-set-tags-command' on headline ENTRY.
@@ -2474,7 +2472,7 @@ Case is significant."
   (string< (org-brain-title entry1) (org-brain-title entry2)))
 
 
-(defvar-local org-brain-visualize-sort-function 'org-brain-title<
+(defvar-local org-brain-visualize-sort-function 'org-brain-title<)
 
 (defun org-brain-category-and-title< (entry1 entry2)
   "Return non-nil if category of ENTRY1 is less than ENTRY2 in `org-brain-category-face-alist' order.
@@ -3793,7 +3791,7 @@ ENTRY should be a string; an id in the case of an headline entry."
 Provides actions for visualizing, adding/removing relations, etc.
 Supports selecting multiple entries at once."
   (interactive)
-  (helm :sources '(helm-brain--source helm-brain--fallback-source))))
+  (helm :sources '(helm-brain--source helm-brain--fallback-source)))
 
 ;;; Ivy integration
 
