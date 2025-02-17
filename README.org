@@ -278,6 +278,7 @@ available in =org-brain-visualize=:
 | S           | =org-brain-select-map=               | Prefix key to do batch processing with selected entries.                          |
 | t           | =org-brain-set-title=                | Change the title of the entry.                                                    |
 | T           | =org-brain-set-tags=                 | Change the tags of the entry.                                                     |
+| G           | =org-brain-set-category=             | Change the category of the entry.                                                 |
 | d           | =org-brain-delete-entry=             | Choose an entry to delete.                                                        |
 | l           | =org-brain-visualize-add-resource=   | Add a new resource link in entry                                                  |
 | r           | =org-brain-open-resource=            | Choose and open a resource from the entry.                                        |
