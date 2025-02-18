@@ -2921,17 +2921,17 @@ Set up the capture templates we need in `org-brain-visualize-mode'."
       (when (and org-brain-visualize-use-capture-templates
                  (not org-brain-visualize--capture-templates-registered-p))
         (push `(,org-brain-visualize-capture-prefix-key
-                "Templates when working with org-brain")
+                "Org-Brain")
               org-capture-templates)
-        (push `(,(concat org-brain-visualize-capture-prefix-key "b")
-                "Add note to new / existing Brain Entry"
+        (push `(,(concat org-brain-visualize-capture-prefix-key "n")
+                "Note"
                 plain
                 (function org-brain-goto-end)
                 "%i%?"
                 :empty-lines 1)
               org-capture-templates)
         (push `(,(concat org-brain-visualize-capture-prefix-key "t")
-                "Add TODO to the current Brain Entry"
+                "Todo"
                 entry
                 (function org-brain-goto-current)
                 ,org-brain-todo-capture-template
@@ -3109,7 +3109,7 @@ Used as `bookmark-make-record-function' in `org-brain-visualize-mode'."
 (define-key org-brain-visualize-mode-map "*" 'org-brain-add-child-headline)
 (define-key org-brain-visualize-mode-map "h" 'org-brain-add-child-headline)
 (define-key org-brain-visualize-mode-map "n" 'org-brain-pin)
-(define-key org-brain-visualize-mode-map "N" 'org-brain-add-nickname)
+(define-key org-brain-visualize-mode-map "N" 'org-brain-visualize-add-note)
 (define-key org-brain-visualize-mode-map "t" 'org-brain-set-title)
 (define-key org-brain-visualize-mode-map "j" 'forward-button)
 (define-key org-brain-visualize-mode-map "k" 'backward-button)
