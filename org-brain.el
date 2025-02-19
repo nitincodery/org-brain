@@ -3420,8 +3420,7 @@ Helper function for `org-brain-visualize'."
   (if-let ((text (org-brain-text entry)))
       (progn
         (setq text (string-trim text))
-        (if (or (boundp 'org-brain-polymode)
-                org-brain-show-full-entry
+        (if (or org-brain-show-full-entry
                 (> (length text) 0))
             (progn
               (insert "\n\n")
@@ -3432,6 +3431,7 @@ Helper function for `org-brain-visualize'."
                         (insert text)
                         (delay-mode-hooks
                           (org-mode)
+			  (read-only-mode 1)
                           (setq-local org-pretty-entities t)
                           (font-lock-ensure (point-min) (point-max))
                           (buffer-string))))
